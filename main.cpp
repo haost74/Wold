@@ -17,7 +17,7 @@ int main(){
 
 
      Dna d;
-     d.generate();
+     d.generate(d.random());
   
 
   return 0;
