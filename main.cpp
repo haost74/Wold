@@ -2,7 +2,11 @@
 #include "reader/reader.h"
 #include "splitStr/split.h"
 #include "generate/Dna.h"
+#include "timer/Timer.h"
 
+static void foo(int i){
+   std::cout << i << '\n';
+}
 
 int main(){
   
@@ -18,7 +22,17 @@ int main(){
 
      Dna d;
      d.generate(d.random());
-  
+     /*
+     Timer t(10);
+     t.fun = foo;
+     t.start();
+     */
+    Timer<int> timer(10);
+    timer.fun = foo;
+    const int r = 1024;
+    timer.start();
+
+    
 
   return 0;
 }
